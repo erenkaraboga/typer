@@ -8,8 +8,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
         title: Text(appbarText,style: TextStyle(color:  Colors.black),),
         backgroundColor: Colors.white,
-        leading:  Icon(
-          Icons.menu,
+        leading:  IconButton(
+          icon :Icon(Icons.menu),
+          onPressed: () {
+          Scaffold.of(context).openDrawer();
+        },
           color: Colors.black,
         ),
         actions: [

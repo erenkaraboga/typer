@@ -40,9 +40,9 @@ class _NavigationModelState extends State<NavigationModel> {
         body:  TabBarView(
           children: [
             HomePage(),
-            ProfilePage(),
             SearchPage(),
-            PostPage()
+            PostPage(),
+            ProfilePage(),
           ],
         ),
       ),
