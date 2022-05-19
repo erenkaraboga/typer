@@ -11,37 +11,47 @@ class _DrawerWidgetState extends State<DrawerWidget> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-        child: ListView(
-      padding: EdgeInsets.zero,
-      children: const <Widget>[
-        SizedBox(
-          height: 89,
-          child: DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.white
-            ),
-            child: Text(
-              'TypeR',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 20,
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: const <Widget>[
+              SizedBox(
+                height: 89,
+                child: DrawerHeader(
+                  decoration: BoxDecoration(
+                      color: Colors.white
+                  ),
+                  child: Text(
+                    'TypeR',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
               ),
-            ),
+              ListTile(
+
+                leading: Icon(Icons.archive_outlined),
+                title: Text('Kaydedilenler'),
+              ),
+              ListTile(
+                leading: Icon(Icons.library_add_outlined),
+                title: Text('İstek'),
+              ),
+              Divider(),
+              ListTile(
+                leading: Icon(Icons.settings_outlined),
+                title: Text('Ayarlar'),
+              ),
+              Divider(),
+              SizedBox(width: 3, height: 310,),
+              Divider(),
+              ListTile(
+                leading: Icon(Icons.info_outline),
+                title: Text('Hakkında'),
+              ),
+            ],
           ),
-        ),
-        ListTile(
-          leading: Icon(Icons.message),
-          title: Text('Messages'),
-        ),
-        ListTile(
-          leading: Icon(Icons.account_circle),
-          title: Text('Profile'),
-        ),
-        ListTile(
-          leading: Icon(Icons.settings),
-          title: Text('Settings'),
-        ),
-      ],
-    ));
+      );
   }
 }
