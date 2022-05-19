@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:typer/cardWidget.dart';
-import 'package:typer/model.dart';
+import 'package:typer/viewmodel/cardWidget.dart';
+import 'package:typer/model/model.dart';
+import 'package:typer/viewmodel/customAppBar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -13,24 +14,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Typer", style: TextStyle(color: Colors.black)),
-        backgroundColor: Colors.white,
-        leading: const Icon(
-          Icons.menu,
-          color: Colors.black,
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Icon(
-              Icons.near_me_outlined,
-              size: 40,
-              color: Colors.black,
-            ),
-          )
-        ],
-      ),
+      appBar: CustomAppBar(appbarText: "TypeR",iconRight: Icon(Icons.near_me_outlined,color: Colors.black,)),
       body: Column(children: [
         Center(
             child: Padding(

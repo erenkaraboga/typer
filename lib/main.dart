@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:typer/viewmodel/naviBarPage.dart';
 
-import 'homepage.dart';
+import 'view/homepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
     debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: const HomePage(),
+      home: const NavigationModel(),
     );
   }
 }
