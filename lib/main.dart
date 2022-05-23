@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:typer/view/login.dart';
 import 'package:typer/viewmodel/naviBarPage.dart';
 
 import 'view/homepage.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
     debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: const NavigationModel(),
+      home:  LoginScreen(),
     );
   }
 }
