@@ -120,7 +120,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
             topLeft: Radius.circular(100),
             topRight: Radius.circular(100),
           ),
-          color: kBackgroundColor
+          color: Color.fromARGB(255, 228, 248, 248)
         ),
 
         alignment: Alignment.center,
@@ -135,7 +135,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
           child: isLogin ? Text(
             "Hesabın yok mu? Kayıt ol",
             style: TextStyle(
-              color: kPrimaryColor,
+              color: Colors.black87,
               fontSize: 18
             ),
           ) : null,

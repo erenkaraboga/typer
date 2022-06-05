@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:typer/view/introductionScreen.dart';
 
 class DrawerWidget extends StatefulWidget {
-  const DrawerWidget({Key? key}) : super(key: key);
+   DrawerWidget({Key? key}) : super(key: key);
 
   @override
   State<DrawerWidget> createState() => _DrawerWidgetState();
@@ -13,7 +14,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
     return Drawer(
           child: ListView(
             padding: EdgeInsets.zero,
-            children: const <Widget>[
+            children:  <Widget>[
               SizedBox(
                 height: 89,
                 child: DrawerHeader(
@@ -30,9 +31,11 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 ),
               ),
               ListTile(
-
                 leading: Icon(Icons.archive_outlined),
                 title: Text('Kaydedilenler'),
+                onTap: (){
+             
+                },
               ),
               ListTile(
                 leading: Icon(Icons.library_add_outlined),
@@ -44,12 +47,26 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 title: Text('Ayarlar'),
               ),
               Divider(),
-              SizedBox(width: 3, height: 310,),
+              SizedBox(width: 3, height: 250,),
+              ListTile(
+            leading: Icon(Icons.star_border_outlined),
+            title: Text('Değerlendir'),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return IntroPage();
+              }));
+            },
+          ),
               Divider(),
               ListTile(
-                leading: Icon(Icons.info_outline),
-                title: Text('Hakkında'),
-              ),
+            leading: Icon(Icons.info_outline),
+            title: Text('Hakkında'),
+               onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return IntroPage();
+              }));
+            },
+            ),
             ],
           ),
       );

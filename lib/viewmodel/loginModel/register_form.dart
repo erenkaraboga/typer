@@ -49,7 +49,7 @@ class RegisterForm extends StatelessWidget {
                   SizedBox(height: 40),
 
                   Image.asset(
-                    'assets/images/bookk.png',
+                    'assets/images/logo2.png',
                     height: 200,
                     width: 200,
                   ),

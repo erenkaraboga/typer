@@ -46,7 +46,7 @@ class LoginForm extends StatelessWidget {
 
                 SizedBox(height: 40),
 
-                Image.asset('assets/images/bookk.png',height: 200,width: 200,),
+                Image.asset('assets/images/logo.png',height: 220,width: 220,),
 
                 SizedBox(height: 10),
 
