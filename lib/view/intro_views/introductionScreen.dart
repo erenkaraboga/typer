@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:typer/view/ProfilePage.dart';
+import 'package:typer/view/profile/ProfilePage.dart';
 import 'package:typer/view/homepage.dart';
 import 'package:typer/view/intro_views/intro_page_1.dart';
 import 'package:typer/view/intro_views/intro_page_2.dart';
 
-import 'intro_views/intro_page_3.dart';
+import 'intro_page_3.dart';
 
 
 

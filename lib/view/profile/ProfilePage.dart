@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:typer/view/ProfilePostsPage.dart';
+import 'package:typer/view/profile/ProfilePostsPage.dart';
 
 
 
-import '../viewmodel/customAppBar.dart';
-import '../viewmodel/drawer.dart';
+import '../../viewmodel/customAppBar.dart';
+import '../../viewmodel/drawer.dart';
 class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) =>DefaultTabController(length: 1,

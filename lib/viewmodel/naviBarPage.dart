@@ -4,7 +4,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:typer/view/homepage.dart';
 import 'package:circle_bottom_navigation_bar/circle_bottom_navigation_bar.dart';
 import '../view/PostPage.dart';
-import '../view/ProfilePage.dart';
+import '../view/profile/ProfilePage.dart';
 import '../view/SearchPage.dart';
 class NavigationModel extends StatefulWidget {
   const NavigationModel({Key? key}) : super(key: key);
