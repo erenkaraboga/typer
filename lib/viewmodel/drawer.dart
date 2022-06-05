@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rating_dialog/rating_dialog.dart';
 import 'package:typer/view/introductionScreen.dart';
 
 class DrawerWidget extends StatefulWidget {
@@ -52,9 +53,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             leading: Icon(Icons.star_border_outlined),
             title: Text('Değerlendir'),
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return IntroPage();
-              }));
+             openRateDialog();
             },
           ),
               Divider(),
@@ -71,4 +70,45 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           ),
       );
   }
+    openRateDialog() => showDialog(
+        context: context,
+        barrierDismissible: true, // set to false if you want to force a rating
+        builder: (context) => buildRatingg(),
+      );
+      Widget buildRatingg() => RatingDialog(
+        initialRating: 1.0,
+        title: Text(
+          'Puanla!',
+          textAlign: TextAlign.center,
+          style: const TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        // encourage your user to leave a high rating?
+        message: Text(
+          'Yıldıza tıkla ve puanla. İstersen yorum yapabilirsin!',
+          textAlign: TextAlign.center,
+          style: const TextStyle(fontSize: 15),
+        ),
+        // your app's logo?
+        image: Image.asset(
+          'assets/images/logo2.png',
+          fit: BoxFit.fitWidth,
+          width: 150,
+          height: 159,
+        ),
+
+        submitButtonText: 'Gönder',
+        submitButtonTextStyle: TextStyle(
+            color: Colors.grey.shade800,
+            fontSize: 20,
+            fontWeight: FontWeight.bold),
+        commentHint: 'Yorumunuz...',
+        starColor: Color(0xff85dfe0),
+        onCancelled: () => print('cancelled'),
+        onSubmitted: (response) {
+          print('rating: ${response.rating}, comment: ${response.comment}');
+        },
+      );
 }
