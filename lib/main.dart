@@ -8,10 +8,14 @@ import 'package:typer/viewmodel/naviBarPage.dart';
 
 import 'view/homepage.dart';
 
-void main() {
+Future main()async {
    WidgetsFlutterBinding.ensureInitialized();
+     await initialization(null);
    HttpOverrides.global = MyHttpOverrides();
   runApp(const MyApp());
+}
+Future initialization(BuildContext? context) async {
+  await Future.delayed(Duration(seconds: 2));
 }
 class MyHttpOverrides extends HttpOverrides {
   @override

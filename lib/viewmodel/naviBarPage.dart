@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:typer/view/BookSearchPage.dart';
 import 'package:typer/view/homepage.dart';
 import 'package:circle_bottom_navigation_bar/circle_bottom_navigation_bar.dart';
 import '../view/PostPage.dart';
@@ -40,7 +41,7 @@ class _NavigationModelState extends State<NavigationModel> {
         body:  TabBarView(
           children: [
             HomePage(),
-            SearchPage(),
+            BookSearchPage(),
             PostPage(),
             ProfilePage(),
           ],
