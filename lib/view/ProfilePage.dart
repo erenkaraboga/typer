@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:typer/view/ProfilePostsPage.dart';
 
 
 
@@ -26,6 +27,7 @@ class ProfilePage extends StatelessWidget {
                  decoration: BoxDecoration(
                    color:  Colors.grey,
                    shape: BoxShape.circle,
+                   
 
                  ),
                ),
