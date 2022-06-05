@@ -5,10 +5,12 @@ class IntroPage1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
-      child: Center(
-        child: Text("page 1"),
-      ),
-    );
+    decoration: BoxDecoration(
+      image: DecorationImage(image: AssetImage('assets/images/1.jpg'),
+      fit: BoxFit.contain,
+      alignment: Alignment.topCenter
+    ),   
+    )
+  );
   }
 }

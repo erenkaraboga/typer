@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:typer/view/login.dart';
 import 'package:typer/view/profile/ProfilePage.dart';
 import 'package:typer/view/homepage.dart';
 import 'package:typer/view/intro_views/intro_page_1.dart';
 import 'package:typer/view/intro_views/intro_page_2.dart';
 
-import 'intro_page_3.dart';
+import 'intro_views/intro_page_3.dart';
 
 
 
@@ -52,8 +53,8 @@ class _IntroPageState extends State<IntroPage> {
              ),
                 SmoothPageIndicator(controller: _controller, count: 3
                 ,effect:SwapEffect(
-                    activeDotColor: Colors.black,
-                    dotColor: Colors.grey.shade200,
+                    activeDotColor: Color(0xff85dfe0),
+                    dotColor: Color(0xffc6eeee),
                     dotHeight: 15,
                     dotWidth: 15,
                     spacing: 10,
@@ -63,7 +64,7 @@ class _IntroPageState extends State<IntroPage> {
                 ? GestureDetector(
                     onTap:(){
                   Navigator.push(context, MaterialPageRoute(builder: (context){
-                    return ProfilePage();
+                    return LoginScreen();
                   },
                   ),
                   );

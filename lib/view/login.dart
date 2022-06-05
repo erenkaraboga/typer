@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../../constrants/constants.dart';
-import '../../viewmodel/loginModel/cancel_button.dart';
-import '../../viewmodel/loginModel/login_form.dart';
-import '../../viewmodel/loginModel/register_form.dart';
+import '../constrants/constants.dart';
+import '../viewmodel/loginModel/cancel_button.dart';
+import '../viewmodel/loginModel/login_form.dart';
+import '../viewmodel/loginModel/register_form.dart';
 
 
 class LoginScreen extends StatefulWidget {

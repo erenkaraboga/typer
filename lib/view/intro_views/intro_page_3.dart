@@ -4,11 +4,12 @@ class IntroPage3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: Center(
-        child: Text("page 3"),
-      ),
-    );
+    return  Container(
+        decoration: BoxDecoration(
+      image: DecorationImage(
+          image: AssetImage('assets/images/3.jpg'),
+          fit: BoxFit.contain,
+          alignment: Alignment.topCenter),
+    ));
   }
 }
