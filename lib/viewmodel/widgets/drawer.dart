@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rating_dialog/rating_dialog.dart';
-import 'package:typer/view/introductionScreen.dart';
+import 'package:typer/view/intro_views/introductionScreen.dart';
+import 'package:typer/view/login.dart';
 
 class DrawerWidget extends StatefulWidget {
    DrawerWidget({Key? key}) : super(key: key);
@@ -48,7 +49,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 title: Text('Ayarlar'),
               ),
               Divider(),
-              SizedBox(width: 3, height: 250,),
+              SizedBox(width: 3, height: 200,),
               ListTile(
             leading: Icon(Icons.star_border_outlined),
             title: Text('Değerlendir'),
@@ -66,6 +67,15 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               }));
             },
             ),
+            ListTile(
+            leading: Icon(Icons.exit_to_app),
+            title: Text('Çıkış Yap'),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return LoginScreen();
+              }));
+            },
+          ),
             ],
           ),
       );

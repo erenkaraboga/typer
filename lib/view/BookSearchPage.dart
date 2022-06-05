@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:typer/view/PostPage.dart';
-import 'package:typer/viewmodel/naviBarPage.dart';
+import 'package:typer/viewmodel/widgets/naviBarPage.dart';
 
-import '../viewmodel/customAppBar.dart';
-import '../viewmodel/drawer.dart';
+import '../viewmodel/widgets/customAppBar.dart';
+import '../viewmodel/widgets/drawer.dart';
 
 class BookSearchPage extends StatelessWidget {
   @override
@@ -34,7 +34,7 @@ class BookSearchPage extends StatelessWidget {
       ),
     ),
     body: Center(
-      child: Text("BookSearchPage"),
+
     ),
   );
 }

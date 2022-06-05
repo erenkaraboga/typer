@@ -9,10 +9,8 @@ String baseUrlPost = 'https://10.0.2.2:5001/api/Posts';
  Future<List<TyperModel>?> getData() async {
     try {
       var _response = await http.get(Uri.parse(baseUrlUser));
-       print(_response.body);
       if (_response.statusCode == 200) {
         final parsed = json.decode(_response.body).cast<Map<String, dynamic>>();
-        print(parsed);
         return parsed
             .map<TyperModel>((json) => TyperModel.fromJson(json))
             .toList();

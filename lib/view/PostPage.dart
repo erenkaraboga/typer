@@ -1,12 +1,37 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:typer/view/BookSearchPage.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:typer/view/homepage.dart';
-import 'package:typer/viewmodel/customAppBar.dart';
-import 'package:typer/viewmodel/naviBarPage.dart';
+import 'package:typer/viewmodel/widgets/naviBarPage.dart';
 
-import '../viewmodel/drawer.dart';
+class PostPage extends StatefulWidget {
+  const PostPage({Key? key}) : super(key: key);
 
-class PostPage extends StatelessWidget {
+  @override
+  State<PostPage> createState() => _PostPageState();
+}
+
+class _PostPageState extends State<PostPage> {
+  Image? _selectedImage;
+
+  Future _getImage() async {
+    XFile? result = await ImagePicker().pickImage(source: ImageSource.gallery);
+    if (result == null) return;
+    final path = result.path;
+    if (path != null) {
+      _resetState();
+      setState(() {
+        _selectedImage = Image.file(File(path));
+      });
+    }
+  }
+
+  void _resetState() {
+    setState(() {
+      _selectedImage = null;
+    });
+  }
+
   @override
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
@@ -37,51 +62,69 @@ class PostPage extends StatelessWidget {
                 style: TextStyle(color: Colors.black),
               ),
               onPressed: () {
-                print('Pressed');
-              }),
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) =>  NavigationModel()),
+                );
+              })
         ],
       ),
-      floatingActionButton: SizedBox(
-        height: 30,
-        width: 90,
-        child: FloatingActionButton.extended(
-          label: Text(
-            'Kitaplar',
-            style: TextStyle(color: Colors.black),
-          ),
-          // <-- Text
-          backgroundColor: Colors.grey.shade400,
-          shape: BeveledRectangleBorder(borderRadius: BorderRadius.zero),
-          icon: Icon(
-            // <-- Icon
-            Icons.add,
-            size: 10.0,
-            color: Colors.black,
-          ),
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (BuildContext context) => BookSearchPage()));
-          },
+      floatingActionButton: FloatingActionButton.extended(
+        label: Text(
+          'Resim Ekle',
+          style: TextStyle(color: Colors.black),
         ),
+        backgroundColor: Colors.grey.shade400,
+        icon: Icon(
+          Icons.photo_library_outlined,
+          size: 15.0,
+          color: Colors.black,
+        ),
+        onPressed: () {
+          _getImage();
+        },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
       backgroundColor: Colors.transparent,
-      body: Padding(
-        padding: EdgeInsets.all(15),
-        child: Column(children: <Widget>[
-          Padding(
-            padding: EdgeInsets.all(15),
-            child: TextFormField(
-              maxLines: 9,
-              keyboardType: TextInputType.multiline,
-              decoration: InputDecoration(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(15),
+          child: Column(children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: TextFormField(
+                  decoration: InputDecoration(
                 border: InputBorder.none,
-                hintText: 'Neler Düşünüyorsun?',
+                hintText: 'Kitap Adı',
+              )),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: TextFormField(
+                  decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: 'Yazar Adı',
+              )),
+            ),
+            Padding(
+              padding: EdgeInsets.all(15),
+              child: TextFormField(
+                maxLines: 4,
+                keyboardType: TextInputType.multiline,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: 'Neler Düşünüyorsun?',
+                ),
               ),
             ),
-          ),
-        ]),
+            Container(
+              width: 250,
+              height: 250,
+              child: CustomPaint(
+                child: _selectedImage,
+              ),
+            )
+          ]),
+        ),
       ));
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:typer/constrants/constants.dart';
 
-import '../naviBarPage.dart';
+import '../widgets/naviBarPage.dart';
 
 class RoundedButton extends StatelessWidget {
   const RoundedButton({

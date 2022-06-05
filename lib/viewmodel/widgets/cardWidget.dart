@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
 import 'package:typer/model/databaseModel.dart';
 
-import '../model/model.dart';
+import '../../model/model.dart';
 
 class CarWidget extends StatefulWidget {
   const CarWidget({

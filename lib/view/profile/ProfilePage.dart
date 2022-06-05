@@ -4,8 +4,8 @@ import 'package:typer/view/profile/ProfilePostsPage.dart';
 
 
 
-import '../../viewmodel/customAppBar.dart';
-import '../../viewmodel/drawer.dart';
+import '../../viewmodel/widgets/customAppBar.dart';
+import '../../viewmodel/widgets/drawer.dart';
 class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) =>DefaultTabController(length: 1,
@@ -25,7 +25,8 @@ class ProfilePage extends StatelessWidget {
                  height: 100,
                  width: 100,
                  decoration: BoxDecoration(
-                   color:  Colors.grey,
+                   image: DecorationImage(image: NetworkImage(
+                                "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-Images-HD.png")),
                    shape: BoxShape.circle,
                    
 
@@ -38,7 +39,7 @@ class ProfilePage extends StatelessWidget {
                  children: [
                    Column(
                      children: [
-                       Text("0",style: TextStyle(fontSize: 25),),
+                       Text("2",style: TextStyle(fontSize: 25),),
                        Text("Gönderi", style: TextStyle(fontSize: 15))
                      ],
                    ),
@@ -57,8 +58,8 @@ class ProfilePage extends StatelessWidget {
                 Column(
 crossAxisAlignment: CrossAxisAlignment.start ,
                   children: [
-                    Text("Enes Susan",style:TextStyle(fontSize: 20) ,),
-                    Text("enessusan",style:TextStyle(fontSize: 20,fontWeight:FontWeight.bold ) ,),
+                    Text("ErenKaraboga",style:TextStyle(fontSize: 20) ,),
+                    Text("karabogaEren",style:TextStyle(fontSize: 20,fontWeight:FontWeight.bold ) ,),
                   ],
                 ),
               ],

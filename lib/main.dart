@@ -2,9 +2,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:typer/view/introductionScreen.dart';
+import 'package:typer/view/intro_views/introductionScreen.dart';
 import 'package:typer/view/login.dart';
-import 'package:typer/viewmodel/naviBarPage.dart';
+import 'package:typer/viewmodel/widgets/naviBarPage.dart';
 
 import 'view/homepage.dart';
 

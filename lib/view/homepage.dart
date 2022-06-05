@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-import 'package:typer/viewmodel/cardWidget.dart';
+import 'package:typer/viewmodel/widgets/cardWidget.dart';
 import 'package:typer/model/databaseModel.dart';
-import 'package:typer/viewmodel/customAppBar.dart';
-import 'package:typer/viewmodel/drawer.dart';
+import 'package:typer/viewmodel/widgets/customAppBar.dart';
+import 'package:typer/viewmodel/widgets/drawer.dart';
 
 import '../model/model.dart';
 import '../services/helper.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -45,6 +47,7 @@ class _HomePageState extends State<HomePage> {
                   var model = TyperModel();
                   model = snap.data![index];
                   posts = model.posts;
+
                   return Column(children: [
                     //Text( model.avatarUrl! +" "+ model.userName!+ " "+model.posts![0].bookName!+" "+model.posts![0].url!+" "+model.posts![0].description!)
                     CarWidget(
